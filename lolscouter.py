@@ -7,5 +7,7 @@ scoutTeam = [ "r3cursive",
     "omegachan01"
 ]
 
+
 cparser = ConfigParser.ConfigParser()
 cparser.read('config.ini')
+lolapi = LeagueOfLegends(cparser.get('lol','API_KEY'))

@@ -1,6 +1,8 @@
 #config file, dont want ppl having mah api key :(
 config.ini
 
-#get rid of lolscouter
+#get rid of ide shenanigans
 .idea/*
 
+#say no to pyc
+*.pyc
