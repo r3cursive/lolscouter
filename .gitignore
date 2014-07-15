@@ -1,0 +1,6 @@
+#config file, dont want ppl having mah api key :(
+config.ini
+
+#get rid of lolscouter
+.idea/*
+
