@@ -25,25 +25,24 @@ for user in scout_team:
         usersheet = sheet.add_worksheet(title=user, rows=500, cols=20)
         usersheet = sheet.worksheet(user)
 
-    usersheet.update_cell(0, 0, 'champion')
-    usersheet.update_cell(1, 0, 'outcome')
-    usersheet.update_cell(2, 0, 'length')
-    usersheet.update_cell(3, 0, 'kills')
-    usersheet.update_cell(4, 0, 'deaths')
-    usersheet.update_cell(5, 0, 'assists')
-    usersheet.update_cell(6, 0, 'kda')
-    usersheet.update_cell(7, 0, 'id')
+    usersheet.update_cell(1, 1, 'champion')
+    usersheet.update_cell(1, 2, 'outcome')
+    usersheet.update_cell(1, 3, 'length')
+    usersheet.update_cell(1, 4, 'kills')
+    usersheet.update_cell(1, 5, 'deaths')
+    usersheet.update_cell(1, 6, 'assists')
+    usersheet.update_cell(1, 7, 'kda')
+    usersheet.update_cell(1, 8, 'id')
     # i dont know a better way to track these :(
-    sheet_Y = 1
-    import ipdb; ipdb.set_trace()
+    sheet_Y = 2
     for key in user_matches.keys():
         for match in user_matches[key]:
-            usersheet.update_cell(0, sheet_Y, match['champion'])
-            usersheet.update_cell(1, sheet_Y, match['outcome'])
-            usersheet.update_cell(2, sheet_Y, match['length'])
-            usersheet.update_cell(3, sheet_Y, match['kills'])
-            usersheet.update_cell(4, sheet_Y, match['deaths'])
-            usersheet.update_cell(5, sheet_Y, match['assists'])
-            usersheet.update_cell(6, sheet_Y, match['kda-stats'])
-            usersheet.update_cell(7, sheet_Y, match['id'])
+            usersheet.update_cell(sheet_Y, 1, match['champion'])
+            usersheet.update_cell(sheet_Y, 2, match['outcome'])
+            usersheet.update_cell(sheet_Y, 3, match['length'])
+            usersheet.update_cell(sheet_Y, 4, match['kills'])
+            usersheet.update_cell(sheet_Y, 5, match['deaths'])
+            usersheet.update_cell(sheet_Y, 6, match['assists'])
+            usersheet.update_cell(sheet_Y, 7, match['kda-stats'])
+            usersheet.update_cell(sheet_Y, 8, match['id'])
             sheet_Y += 1
