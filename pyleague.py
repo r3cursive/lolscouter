@@ -64,7 +64,7 @@ class PyLeague:
             except ZeroDivisionError:
                 match['kda-stats'] = int(match['kills'])+int(match['assists'])
 
-            match['id'] = hash(frozenset(match))
+            match['id'] = hash(frozenset(match.items()))
 
             if match['champion'] in champhist:
                 champhist[match['champion']].append(match)
