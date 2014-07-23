@@ -39,7 +39,7 @@ for user in scout_team:
     for key in user_matches.keys():
         for match in user_matches[key]:
             usersheet.update_acell(test_cell, match['id'])
-            #import ipdb; ipdb.set_trace()
+            # homeless way to check to see if the id is already entered since google truncates the hash
             if len(usersheet.findall(usersheet.acell(test_cell).value)) < 2:
                 usersheet.update_cell(sheet_Y, 1, match['champion'])
                 usersheet.update_cell(sheet_Y, 2, match['outcome'])
@@ -50,3 +50,4 @@ for user in scout_team:
                 usersheet.update_cell(sheet_Y, 7, match['kda-stats'])
                 usersheet.update_cell(sheet_Y, 8, match['id'])
                 sheet_Y += 1
+            usersheet.update_acell(test_cell,'')
